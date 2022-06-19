@@ -1,0 +1,140 @@
+
+body{
+    background-color: #082032;
+    color: aliceblue;
+}
+
+.nav li{
+        list-style: none;
+        padding: 0px 40px;
+        font-size: 1rem;
+        font-family: 'Comfortaa', cursive;
+        letter-spacing: 1px;       
+}
+
+.nav li a{
+        position: relative;
+        text-decoration: none;
+        color: #a0a0a0;
+        padding: 0px 5px;
+       
+}
+
+a:after{
+    content: "";
+    position: absolute;
+    background-color:  #ff3c78;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+a:hover:after{
+    width: 100%;
+    color:#ffffff;
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.name{
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 320px;
+    left: 170px;
+    display: flex;
+    
+}
+
+
+.name .dynamic-text{
+    margin: 0px;
+    padding-left: 20px;
+    line-height: 72px;
+    height: 72px;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.dynamic-text li{
+    list-style: none;
+    color: #ff4c29;
+    top: 0;
+    position: relative;
+    animation: slide 9s steps(3) infinite;
+}
+
+@keyframes slide{
+    100%{
+        top: -216px;
+    }
+}
+
+.dynamic-text li::after{
+    content:"";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #082032;
+    border-left: 2px solid #ff4c29;
+    animation: typing 3s steps(13) infinite;
+}
+
+/* For mobile screen */
+
+@keyframes typing{
+     40%,
+     60%{
+         left: calc(100% + 25px);
+     }
+     100%{
+         left: 0;
+     }
+}
+
+@media  screen and (max-width: 820px) {
+    .name{
+        font-size: 30px;
+        font-family: 'Poppins', sans-serif;
+        position: static;
+        display: flex;
+        margin:0px auto;
+        width: 60%;
+        /* left: 45px; */
+        /* border: 2px solid red; */
+    }
+
+    .main{
+        margin-top: 50px;
+        width: 130%;
+        display: flex;
+        /* border: 2px solid red; */
+        height: 600px;
+        justify-content: center;
+        align-items: center;
+
+        
+    }
+
+    .name .dynamic-text{
+        margin: 0px;
+        width:100%;
+        padding-left:0px 10px;
+        line-height: 44.8px;
+        height: 44.8px;
+    }
+
+    @keyframes slide{
+        100%{
+            top: -134.4px;
+        }
+    }
+    
+}
